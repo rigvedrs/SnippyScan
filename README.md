@@ -1,4 +1,4 @@
-Complete MLOps Pipeline for Chest X-ray Abnormality Detection System on Cloud
+# Complete MLOps Pipeline for Chest X-ray Abnormality Detection System on Cloud
 
 An intelligent radiological assistance system that combines YOLOv11-L object detection with comprehensive MLOps infrastructure to help radiologists identify and localize chest X-ray abnormalities with enhanced accuracy and efficiency.
 
