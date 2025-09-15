@@ -48,7 +48,7 @@ The system follows a microservices architecture with the following components:
 ### Infrastructure Features
 - **Distributed Training**: Multi-GPU training with Ray for faster model development
 - **Model Versioning**: MLflow integration for experiment tracking and model registry
-- **Automated Deployment**: GitOps-based deployment with staging, canary, and production environments
+- **Automated Deployment**: Deployment with staging, canary, and production environments
 - **Real-time Monitoring**: Comprehensive monitoring of model performance and system health
 - **Data Pipeline**: Automated ETL processes with data quality validation
 
@@ -57,6 +57,7 @@ The system follows a microservices architecture with the following components:
 - **Model Optimization**: ONNX conversion, quantization, and TensorRT acceleration
 - **Dynamic Batching**: Optimized throughput for varying loads
 - **Fault Tolerance**: Automatic recovery and failover mechanisms
+- **Advanced Performance Tuning**: Comprehensive Triton server configurations for maximum efficiency
 
 ## 📊 Performance Metrics
 
@@ -67,6 +68,23 @@ The system follows a microservices architecture with the following components:
 | Model Accuracy (mAP@0.5) | >0.75 | 0.82 |
 | Concurrent Requests | 10+ | 25+ |
 | Uptime | 99.9% | 99.95% |
+
+### 🚀 Advanced Performance Optimizations
+
+Performance experiments have achieved following results across multiple deployment scenarios:
+
+#### GPU Configurations (Full Model)
+- **Custom TensorRT V2**: 157.8 infer/sec throughput with optimized memory allocation
+- **Custom TensorRT V1**: Ultra-low latency (19.3ms) with dynamic batching
+- **Default TensorRT**: 129.0 infer/sec for balanced performance
+- **ONNX Runtime**: 78-79 infer/sec with CUDA acceleration
+
+#### CPU Configurations (Nano Model)
+- **OpenVINO Nano**: 14.6 infer/sec - 15x faster than standard CPU backends
+- **Edge Deployment**: Optimized for resource-constrained environments
+- **Memory Efficiency**: Reduced model size with compact output format
+
+> 📈 **Detailed performance analysis, configuration files, and optimization insights are available in the [Triton Configuration Repository](https://github.com/rigvedrs/YOLO-Triton-Configs-for-ONNX-OpenVino-TensorRT)**
 
 ## 🛠️ Technology Stack
 
@@ -232,9 +250,28 @@ results = response.json()
 - Data quality and drift detection
 - Error rates and alert conditions
 
+### 🔍 Advanced Monitoring & Data Drift Detection
+
+#### Production Monitoring Features
+- **Real-time Model Performance Tracking**: Continuous accuracy monitoring with automated alerts
+- **Data Drift Detection**: Advanced statistical analysis to detect distribution shifts in incoming data
+- **Concept Drift Monitoring**: Tracks changes in the relationship between features and predictions
+- **Model Decay Detection**: Identifies when model performance degrades over time
+- **A/B Testing Framework**: Compare model versions in production environments
+
+#### Multi-Branch Monitoring Architecture
+Our monitoring system supports multiple deployment scenarios with specialized branches:
+
+- **Production Branch**: Full-scale monitoring with comprehensive alerting
+- **Staging Branch**: Pre-production validation with synthetic data testing
+- **Canary Branch**: Gradual rollout monitoring with performance comparison
+- **Data Drift Branch**: Specialized monitoring for data quality and distribution analysis
+
+> 🔬 **Additonal serving and monitoring configuration available in the [Serving Monitoring Repository](https://github.com/rigvedrs/serving-monitoring)**
+
 ## 🔄 Continuous Integration/Deployment
 
-The system implements GitOps principles with automated pipelines:
+The system implements automated pipelines:
 
 1. **Code Changes** → Git repository
 2. **ArgoCD Detection** → Automatic sync
@@ -366,6 +403,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Ultralytics** for the YOLOv11 implementation
 - **NVIDIA** for Triton Inference Server
 - **Chameleon Cloud** for infrastructure support
+
+## 🔗 Related Projects & Resources
+
+### Performance Optimization Research
+- **[YOLO-Triton-Configs Repository](https://github.com/rigvedrs/YOLO-Triton-Configs-for-ONNX-OpenVino-TensorRT)**: Comprehensive Triton server configurations, performance benchmarks, and optimization insights for maximum inference efficiency across GPU and CPU deployments.
+
+### Advanced Monitoring & Production Systems
+- **[Serving Monitoring Repository](https://github.com/rigvedrs/serving-monitoring)**: Production-ready monitoring solutions with advanced data drift detection, model performance tracking, and multi-branch deployment monitoring capabilities.
 
 ## 📞 Support
 
