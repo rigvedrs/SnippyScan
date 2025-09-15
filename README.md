@@ -18,13 +18,13 @@ This system provides AI-assisted chest X-ray analysis for radiology departments,
 The system follows a microservices architecture with the following components:
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Data Pipeline │    │  Model Training │    │  Model Serving  │
-│                 │    │                 │    │                 │
-│ • ETL Processing│    │ • YOLOv11-L     │    │ • Triton Server │
-│ • Data Validation│   │ • Distributed   │    │ • ONNX Runtime  │
-│ • Quality Checks│    │   Training      │    │ • TensorRT      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+┌───────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Data Pipeline   │    │  Model Training │    │  Model Serving  │
+│                   │    │                 │    │                 │
+│ • ETL Processing  │    │ • YOLOv11-L     │    │ • Triton Server │
+│ • Data Validation │    │ • Distributed   │    │ • ONNX Runtime  │
+│ • Quality Checks  │    │   Training      │    │ • TensorRT      │
+└───────────────────┘    └─────────────────┘    └─────────────────┘
          │                       │                       │
          └───────────────────────┼───────────────────────┘
                                  │
